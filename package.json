@@ -1,5 +1,5 @@
 {
-  "name": "rss-combiner",
+  "name": "aes256gcm",
   "main": "index",
   "license": "MIT",
   "homepage": "http://github.com/mmeyer2k/node-aes256gcm",
