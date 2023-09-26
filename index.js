@@ -10,11 +10,7 @@ module.exports = {
 
     const cipher = crypto.createCipheriv(algorithm, key, iv)
 
-    const cipherText = Buffer.concat([cipher.update(data), cipher.final()])
-
-    const tag = cipher.getAuthTag()
-
-    return Buffer.concat([iv, tag, cipherText]).toString(encoding)
+    return Buffer.concat([iv, cipher.getAuthTag(), cipher.update(data), cipher.final()]).toString(encoding)
   },
   decrypt: (data, secret, encoding = 'binary') => {
     const key = createKey(secret)
