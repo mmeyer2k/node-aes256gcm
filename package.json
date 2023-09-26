@@ -1,6 +1,8 @@
 {
-  "main": "lib/index",
+  "name": "rss-combiner",
+  "main": "index",
   "license": "MIT",
+  "homepage": "http://github.com/mmeyer2k/node-aes256gcm",
   "scripts": {
     "test": "jest"
   },
