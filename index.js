@@ -1,4 +1,6 @@
-const crypto = require('crypto');
+const crypto = require('crypto')
+
+const algorithm = 'aes-256-gcm'
 
 module.exports = {
   encrypt: (data, secret, encoding = 'binary') => {
@@ -6,7 +8,7 @@ module.exports = {
 
     const iv = crypto.randomBytes(16)
 
-    const cipher = crypto.createCipheriv('aes-256-gcm', key, iv)
+    const cipher = crypto.createCipheriv(algorithm, key, iv)
 
     const cipherText = Buffer.concat([cipher.update(data), cipher.final()])
 
@@ -25,7 +27,7 @@ module.exports = {
 
     const cipherText = payload.subarray(32)
 
-    const cipher = crypto.createDecipheriv('aes-256-gcm', key, iv)
+    const cipher = crypto.createDecipheriv(algorithm, key, iv)
 
     cipher.setAuthTag(tag)
 

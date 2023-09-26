@@ -1,4 +1,6 @@
 {
+  "main": "lib/index",
+  "license": "MIT",
   "scripts": {
     "test": "jest"
   },
