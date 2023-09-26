@@ -2,7 +2,7 @@ const gcm = require('./index')
 const crypto = require('crypto')
 
 const a = 'AAAA'
-const b = 'BBBB'
+const b = 'X'.repeat(32)
 
 test('basic encryption test (binary)', () => {
   const c = gcm.encrypt(a, b)

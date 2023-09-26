@@ -5,9 +5,7 @@ const pkcs7 = require('./pkcs7')
 const algorithm = 'aes-256-gcm'
 
 const engine = {
-  encrypt: (data, secret, encoding = 'binary', padded = false) => {
-    const key = createKey(secret)
-
+  encrypt: (data, key, encoding = 'binary', padded = false) => {
     const iv = crypto.randomBytes(16)
 
     const cipher = crypto.createCipheriv(algorithm, key, iv)
@@ -20,9 +18,7 @@ const engine = {
 
     return Buffer.concat([iv, tag, ciphertext]).toString(encoding)
   },
-  decrypt: (data, secret, encoding = 'binary', padded = false) => {
-    const key = createKey(secret)
-
+  decrypt: (data, key, encoding = 'binary', padded = false) => {
     const payload = Buffer.from(data, encoding)
 
     const iv = payload.subarray(0, 16)
@@ -48,13 +44,6 @@ const padded = {
   decrypt: (data, secret, encoding = 'binary') => {
     return engine.decrypt(data, secret, encoding, true)
   }
-}
-
-function createKey(secret) {
-  return crypto
-    .createHash('sha256')
-    .update(secret)
-    .digest()
 }
 
 module.exports = {...engine, padded}
