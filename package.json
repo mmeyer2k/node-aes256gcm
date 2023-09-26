@@ -1,5 +1,6 @@
 {
   "name": "aes256gcm",
+  "version": "0.0.5",
   "main": "index",
   "license": "MIT",
   "homepage": "http://github.com/mmeyer2k/node-aes256gcm",
