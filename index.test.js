@@ -22,12 +22,12 @@ test('basic encryption test (base64)', () => {
   expect(d).toBe(a)
 })
 
-// test('test buffered data', () => {
-//   const k = Buffer.from(crypto.randomBytes(32).toString('base64'), 'base64')
-//   const c = gcm.encrypt(k, b)
-//   const d = gcm.decrypt(c, b)
-//   expect(d).toBe(k)
-// })
+test('test buffered data', () => {
+  const k = Buffer.from("A".repeat(4))
+  const c = gcm.encrypt(k, b)
+  const d = gcm.decrypt(c, b)
+  expect(d.toString()).toBe(k.toString())
+})
 
 test('test buffered key', () => {
   const k = Buffer.from(crypto.randomBytes(32).toString('base64'), 'base64')
