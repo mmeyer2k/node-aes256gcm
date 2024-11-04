@@ -1,9 +1,9 @@
 {
-  "name": "aes256gcm",
+  "name": "@mmeyer2k/aes256gcm",
   "version": "0.0.0",
   "license": "MIT",
   "main": "index",
-  "homepage": "http://github.com/mmeyer2k/node-aes256gcm",
+  "homepage": "https://github.com/mmeyer2k/node-aes256gcm",
   "scripts": {
     "test": "jest"
   },
