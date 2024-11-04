@@ -4,7 +4,7 @@ GCM is widely considered to be the most optimal choice for projects needing symm
 
 ## Install
 ```bash
-yarn install aes256gcm
+yarn add aes256gcm
 ```
 
 ## Usage
